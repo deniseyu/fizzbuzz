@@ -1,37 +1,53 @@
 require 'game'
 
-describe Game do 
+describe Fixnum do 
 
-	let(:game) { Game.new }
+	let(:fixnum) { Fixnum.new }
 
-	context "is divisible by" do
+	context "divisible" do
 
 		it "3" do 
-			expect(game.divides?(6, 3)).to be true
+			expect(3.is_divisible_by_three?).to be true
 		end
 
 		it "5" do 
-			expect(game.divides?(10, 5)).to be true
+			expect(5.is_divisible_by_five?).to be true
 		end
 
 		it "15" do 
-			expect(game.divides?(30, 15)).to be true
+			expect(15.is_divisible_by_fifteen?).to be true
 		end
 
 	end
 
-	context "is not divisible by" do 
+	context "not divisible" do 
 
-		it "3" do
-			expect(game.divides?(1, 3)).to be false
+		it "does not divide by 3" do 
+			expect(4.is_divisible_by_three?).to be false
 		end
 
-		it "5" do 
-			expect(game.divides?(1, 5)).to be false
+		it "does not divide by 5" do
+			expect(4.is_divisible_by_five?).to be false
 		end
 
-		it "15" do 
-			expect(game.divides?(1, 15)).to be false
+		it "does not divide by 15" do 
+			expect(4.is_divisible_by_five?).to be false
+		end
+
+	end
+
+	context "playing the game" do
+
+		it "should say fizz" do 
+			expect(3.fizzbutt).to eq "fizz"
+		end
+
+		it "should say butt" do 
+			expect(5.fizzbutt).to eq "butt"
+		end
+
+		it "should say fizzbutt" do 
+			expect(15.fizzbutt).to eq "fizzbutt"
 		end
 
 	end
