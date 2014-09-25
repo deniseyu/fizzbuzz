@@ -1,18 +1,15 @@
 class Fixnum
 
-	def initialize
-	end
-
 	def is_divisible_by_three?
-		self.divides_by?(3)
+		divides_by?(3)
 	end
 
 	def is_divisible_by_five?
-		self.divides_by?(5)
+		divides_by?(5)
 	end
 
 	def is_divisible_by_fifteen?
-		self.divides_by?(15)
+		divides_by?(15)
 	end
 
 	def divides_by?(factor)
@@ -20,9 +17,16 @@ class Fixnum
 	end
 
 	def fizzbutt
-		return "fizzbutt" if self.is_divisible_by_fifteen?
-		return "fizz" if self.is_divisible_by_three?
-		return "butt" if self.is_divisible_by_five?
+		return "fizzbutt" if is_divisible_by_fifteen?
+		return "fizz" if is_divisible_by_three?
+		return "butt" if is_divisible_by_five?
+		self
 	end
 
 end
+
+
+a = Array (1..30)
+a.each { |n| puts n.fizzbutt }
+
+

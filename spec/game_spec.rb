@@ -1,8 +1,6 @@
-require 'game'
+require './lib/game.rb'
 
 describe Fixnum do 
-
-	let(:fixnum) { Fixnum.new }
 
 	context "divisible" do
 
@@ -54,6 +52,5 @@ describe Fixnum do
 	
 end
 
-# [1..100].
 
 
